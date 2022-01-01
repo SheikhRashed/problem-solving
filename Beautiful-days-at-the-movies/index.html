@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Solving || Easy </title>
+</head>
+<body>
+    <script>
+        'use strict'
+        
+        function beautifulDays(i,j,k) { 
+            let count = 0;
+
+            for(let x = i; x <= j; x++) { 
+                if(isBeautifulDay(x,k)) { 
+                    count ++;
+                }
+            }
+           console.log(count)
+        }
+
+        function isBeautifulDay(x, k) { 
+            return differenceOfReverse(x) % k === 0;
+        }
+
+        function differenceOfReverse(x)  {
+            let reversedX = parseInt(
+                x.toString()
+                .split('')
+                .reverse()
+                .join('')
+            );
+
+            return Math.abs(x - reversedX);
+        }
+
+        beautifulDays(20,23, 4) ;
+
+
+    </script>
+</body>
+</html>
